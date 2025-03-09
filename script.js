@@ -9,7 +9,7 @@ let start = false;
 
 p = document.querySelector("p");
 
-document.addEventListener("keypress", function () {
+document.addEventListener("dblclick", function () {
     if (start == false) {
 
         // console.log("click");
@@ -39,7 +39,6 @@ function levelup() {
     console.log(randomcolor);
     let randombtn = document.querySelector(`.${randomcolor}`);
     gamesq.push(randomcolor);
-    console.log(gamesq);
     flashup(randombtn);
 
 }
@@ -51,10 +50,9 @@ function checkAns(Idx) {
     if (usersq[Idx] === gamesq[Idx]) {
         if(usersq.length === gamesq.length){
             setTimeout(levelup, 1000);
-        console.log("matched");
         }
     } else {
-        p.innerHTML = `Game over ! Your score is <b>${level}</b> <br> Press any key to start`;
+        p.innerHTML = `Game over ! Your score is <b>${level}</b> <br> Double click on window to restart`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
             
