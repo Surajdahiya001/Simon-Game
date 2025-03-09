@@ -9,10 +9,13 @@ let start = false;
 
 p = document.querySelector("p");
 
-document.addEventListener("dblclick", function () {
+document.addEventListener("click", function () {
+
+
     if (start == false) {
 
         // console.log("click");
+
         start = true;
 
         levelup();
@@ -36,7 +39,7 @@ function levelup() {
     let random = Math.floor(Math.random() * 3);
     let randomcolor = btns[random];
 
-    console.log(randomcolor);
+    
     let randombtn = document.querySelector(`.${randomcolor}`);
     gamesq.push(randomcolor);
     flashup(randombtn);
@@ -52,13 +55,14 @@ function checkAns(Idx) {
             setTimeout(levelup, 1000);
         }
     } else {
-        p.innerHTML = `Game over ! Your score is <b>${level}</b> <br> Double click on window to restart`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
             
+            p.innerHTML = `Game over ! Your score is <b>${level}</b> <br> Click on window to restart`;
             document.querySelector("body").style.backgroundColor = "white";
+            reset();
         }, 150);
-        reset();
+        
     }
 }
 
