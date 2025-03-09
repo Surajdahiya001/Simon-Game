@@ -9,7 +9,7 @@ let start = false;
 
 p = document.querySelector("p");
 
-document.addEventListener("click", function () {
+document.addEventListener("keypress", function () {
     if (start == false) {
 
         // console.log("click");
